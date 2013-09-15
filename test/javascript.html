@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript OOP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h1>Javascript OOP</h3>
+<p>由类Class来产生对象Object</p>
+<p>每个类Class下面都有一个portotype属性,对象Object依靠类内的构造器和原型构造出来的</p>
+<p>每个对象都有一个__proto__属性来实现对原型prototype的隐式引用</p>
+<script type="text/javascript">
+// 声明animal对象构造器
+function Animal(){
+
+}
+// 将Animal的prototype指向一个对象，亦可理解为Animal的对象原型
+Animal.prototype = {
+    name : "animal",
+    weight : 0,
+    eat : function (){
+        alert("Animal is eating!");
+    }
+}
+// 声明Mammal对象构造器
+function Mammal(){
+    this.name = "manmal";
+}
+Mammal.prototype = new Animal();
+
+// 声明horse对象构造器
+function Horse(height, weight){
+    this.name = "Horse";
+    this.height = height;
+    this.weight = weight;
+}
+//将Horse对象的原型指定为一个Mammal对象,继续构建Horse与Mammal之间的原型链
+Horse.prototype = new Mammal();
+Horse.prototype.eat = function (){
+    alert("Horse is eating grass!");
+}
+//验证并理解原型链
+var horse = new Horse(100, 300);
+console.dir(horse);
+console.log(horse.__proto__ === Horse.prototype);
+console.log(Horse.prototype.__proto__ === Mammal.prototype);
+console.log(Mammal.prototype.__proto__ === Animal.prototype);
+</script>
+</body>
+</html>
