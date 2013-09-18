@@ -1,10 +1,7 @@
 seajs.config({
-    base : "../lib",
-    plugins : ['shim', 'text'],
     alias : {
-        "jQuery" : {
-            src : "jQuery/jquery-1.10.2",
-            exports : "jQuery"
-        }
-    },
+        'jquery' : 'jQuery/jquery-1.10.2.js',
+        'moment' : 'moment/moment+langs',
+        '_' : 'Underscore/underscore',
+    }
 });

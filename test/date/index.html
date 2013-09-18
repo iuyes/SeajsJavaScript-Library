@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript时间处理</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h1>Javascript时间处理</h3>
+<script type="text/javascript">
+// 获取当前时间的UNIX时间戳
+console.info(new Date().getTime());
+
+//自定义时间格式化
+var d = new Date();
+var curr_date = d.getDate();
+var curr_month = d.getMonth() + 1; //Months are zero based
+var curr_year = d.getFullYear();
+console.info(curr_year + '年' + curr_month + '月' + curr_date + '日');
+
+//根据UNIX时间戳获得天数
+
+</script>
+</body>
+</html>
